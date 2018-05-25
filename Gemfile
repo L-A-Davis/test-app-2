@@ -31,8 +31,23 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'jquery-rails'
+gem 'mongoid', '~> 6.1.0'
+gem 'devise', '~> 4.2'
+
+group :test do
+  gem "capybara", ">= 2.7.1"
+  gem 'database_cleaner'
+  gem 'mongoid-rspec'
+  gem 'email_spec'
+  gem 'cucumber-rails', '~> 1.4', '>= 1.4.3', :require => false
+  gem 'launchy', '~> 2.4', '>= 2.4.3'
+end
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem "rspec-rails", ">= 3.7"
+  gem 'factory_bot_rails', '~> 4.10'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 

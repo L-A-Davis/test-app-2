@@ -62,6 +62,15 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "test-app-2_#{Rails.env}"
   config.action_mailer.perform_caching = false
 
+  # would change this to actual host name
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  
+  # ActionMailer Config
+  # Setup for production - deliveries, no errors raised
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.default :charset => "utf-8"
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
